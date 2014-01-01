@@ -1,4 +1,4 @@
-jonwho.github.io
+[jonwho.github.io](http://jonwho.github.io)
 ================
 
 Personal website hosted through Github

@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<style type = "text/css">
+			body {
+				 background-color: #0099FF;
+			}
+			hr {
+				background-color: #33FF66;
+				height: 4px;
+				width: 50%;
+			}
+			table {
+				background-color: #33FF66;
+			}
+			td {
+				text-align:	center;
+				border:		2px solid #00CCFF;
+				width:		9px;
+			}
+			button {
+				width:		90px;
+				height:		45px;
+			}
+		</style>
+	
+		<title>TritonJuice</title>
+		<script type = "text/javascript">
+			var drink = "none";
+			var size = "none";
+			var price = 0;
+			var totalPrice = 0;
+			
+			function add()
+			{
+				if(size == "Small")
+				{
+					price = 3.25;
+				}
+				else if(size == "Medium")
+				{
+					price = 3.75;
+				}
+				else if(size == "Huge")
+				{
+					price = 4.25;
+				}
+				
+				totalPrice += price;
+				
+				document.getElementById("confirmation").innerHTML +=
+				"<h3>"+size+" "+drink+" - "+ "$" + price + "</h3>";
+			}
+			
+			function total()
+			{
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h1>TritonJuice Drink Menu</h1>
+			<hr/>
+			<h2>Refreshing San Diego Drinks</h2>
+			<table>
+				<tr>
+					<th>Sizes</th>
+					<th>Drinks</th>
+					<th>Actions</th>
+				</tr>
+				<tr>
+					<td>
+						<button onclick='size = "Small";'>Small</button>
+					</td>
+					<td>
+						<button onclick='drink = "PB Slammer";'>PB Slammer</button>
+					</td>
+					<td>
+						<button onclick='add();'>Add</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button onclick='size = "Medium";'>Medium</button>
+					</td>
+					<td>
+						<button onclick='drink = "Coronado Cooler";'>Coronado Cooler</button>
+					</td>
+					<td>
+						<button onclick=
+						'
+							alert("Your total drink order is $" + totalPrice);
+						'>
+							Total
+						</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button onclick='size = "Huge";'>Huge</button>
+					</td>
+					<td>
+						<button onclick='drink = "Oceansize";'>Oceansize OJ</button>
+					</td>
+				</tr>
+			</table>
+			<h2>Order Confirmation</h2>
+			<p id="confirmation">
+			</p>
+		</center>
+	</body>
+</html>

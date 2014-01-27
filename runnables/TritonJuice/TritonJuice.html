@@ -1,0 +1,191 @@
+<html lang="en">
+<object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 0px; height: 0px; display: block;"></object>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+		<title>TritonJuice</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="">
+    	<meta name="author" content="">
+    	<!-- Le Styles -->
+    	<link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
+    	<style type = "text/css">
+			body {
+				padding-top: 60px;
+        		padding-bottom: 40px;
+			}
+
+			.sidebar-nav {
+        		padding: 9px 0;
+      		}
+
+			hr {
+				background-color: #33FF66;
+				height: 4px;
+			}
+
+			table {
+				background-color: #33FF66;
+			}
+
+			td {
+				text-align:	center;
+				border:		2px solid #00CCFF;
+				width:		9px;
+			}
+
+			button {
+				width:		90px;
+				height:		45px;
+			}
+
+			@media (max-width: 980px) {
+        		/* Enable use of floated navbar text */
+        		.navbar-text.pull-right {
+          		float: none;
+          		padding-left: 5px;
+          		padding-right: 5px;
+        		}
+      		}
+		</style>
+   		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    	<!--[if lt IE 9]>
+      	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      	<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    	<![endif]-->
+		<script type = "text/javascript">
+			var drink = "none";
+			var size = "none";
+			var price = 0;
+			var totalPrice = 0;
+			
+			function add()
+			{
+				if(size == "Small")
+				{
+					price = 3.25;
+				}
+				else if(size == "Medium")
+				{
+					price = 3.75;
+				}
+				else if(size == "Huge")
+				{
+					price = 4.25;
+				}
+				
+				totalPrice += price;
+				
+				document.getElementById("confirmation").innerHTML +=
+				"<h3>"+size+" "+drink+" - "+ "$" + price + "</h3>";
+			}
+			
+			function total()
+			{
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="navbar-inner">
+	        <div class="container-fluid">
+	          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="brand" href="/">jonwho?</a>
+	          <div class="nav-collapse collapse">
+	            <p class="navbar-text pull-right">
+	              Logged in as <a href="#" class="navbar-link">Username</a>
+	            </p>
+	            <ul class="nav">
+	              <li class="active"><a href="/">Home</a></li>
+	              <li><a href="./../../about.html">About</a></li>
+	              <li><a href="./../../contact.html">Contact</a></li>
+	              <li><a href="./../../calendar.html">Calendar</a></li>
+	              <li><a href="./../../resume.html">Resume</a></li>
+	            </ul>
+	          </div><!--/.nav-collapse -->
+	        </div>
+	      </div>
+	    </div>
+
+		<center>
+			<h1>TritonJuice Drink Menu</h1>
+			<hr/>
+			<h2>Refreshing San Diego Drinks</h2>
+			<table>
+				<tr>
+					<th>Sizes</th>
+					<th>Drinks</th>
+					<th>Actions</th>
+				</tr>
+				<tr>
+					<td>
+						<button onclick='size = "Small";'>Small</button>
+					</td>
+					<td>
+						<button onclick='drink = "PB Slammer";'>PB Slammer</button>
+					</td>
+					<td>
+						<button onclick='add();'>Add</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button onclick='size = "Medium";'>Medium</button>
+					</td>
+					<td>
+						<button onclick='drink = "Coronado Cooler";'>Coronado Cooler</button>
+					</td>
+					<td>
+						<button onclick=
+						'
+							alert("Your total drink order is $" + totalPrice);
+						'>
+							Total
+						</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button onclick='size = "Huge";'>Huge</button>
+					</td>
+					<td>
+						<button onclick='drink = "Oceansize";'>Oceansize OJ</button>
+					</td>
+				</tr>
+			</table>
+			<h2>Order Confirmation</h2>
+			<p id="confirmation">
+			</p>
+		</center>
+
+		<!-- Le javascript
+    	================================================== -->
+    	<!-- Placed at the end of the document so the pages load faster -->
+	    <script src="./Bootstrap, from Twitter_files/jquery.js"></script>
+	    <script src="./Bootstrap, from Twitter_files/bootstrap-transition.js"></script>
+	    <script src="./Bootstrap, from Twitter_files/bootstrap-alert.js"></script>
+	    <script src="./Bootstrap, from Twitter_files/bootstrap-modal.js"></script>
+	    <script src="./Bootstrap, from Twitter_files/bootstrap-dropdown.js"></script>
+	    <script src="./Bootstrap, from Twitter_files/bootstrap-scrollspy.js"></script>
+	    <script src="./Bootstrap, from Twitter_files/bootstrap-tab.js"></script>
+	    <script src="./Bootstrap, from Twitter_files/bootstrap-tooltip.js"></script>
+	    <script src="./Bootstrap, from Twitter_files/bootstrap-popover.js"></script>
+	    <script src="./Bootstrap, from Twitter_files/bootstrap-button.js"></script>
+	    <script src="./Bootstrap, from Twitter_files/bootstrap-collapse.js"></script>
+	    <script src="./Bootstrap, from Twitter_files/bootstrap-carousel.js"></script>
+	    <script src="./Bootstrap, from Twitter_files/bootstrap-typeahead.js"></script>
+
+	</body>
+
+	<hr>
+ 	<footer>
+    	<p>© Jon Ho 2014</p>
+  	</footer>
+</html>

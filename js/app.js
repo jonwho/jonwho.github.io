@@ -8,7 +8,9 @@ angular.module('jonwho', [
 ]).
 config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/', {templateUrl: 'index.html'});
-	$routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-	$routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
+	$routeProvider.when('/about', {templateUrl: 'views/about.html'});
+	$routeProvider.when('/contact', {templateUrl: 'views/contact.html'});
+	$routeProvider.when('/calendar', {templateUrl: 'views/calendar.html'});
+	$routeProvider.when('/resume', {templateUrl: 'views/resume.html'});
 	$routeProvider.otherwise({redirectTo: '/index.html'});
 }]);

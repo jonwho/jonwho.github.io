@@ -2,15 +2,28 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('jonwho', [
-	'ngRoute',
-	'jonwho.controllers'
-]).
-config(['$routeProvider', function($routeProvider) {
-	$routeProvider.when('/', {templateUrl: 'home.html'});
-	$routeProvider.when('/about', {templateUrl: 'views/about.html'});
-	$routeProvider.when('/contact', {templateUrl: 'views/contact.html'});
-	$routeProvider.when('/calendar', {templateUrl: 'views/calendar.html'});
-	$routeProvider.when('/resume', {templateUrl: 'views/resume.html'});
-	$routeProvider.otherwise({redirectTo: '/home.html'});
-}]);
+angular
+	.module('jonwho', [
+		'ngRoute',
+		'jonwho.controllers'
+	]).
+	config(['$routeProvider', function($routeProvider) {
+		$routeProvider.when('/', {
+			templateUrl: 'views/home.html'
+		})
+		.when('/about', {
+			templateUrl: 'views/about.html'
+		})
+		.when('/contact', {
+			templateUrl: 'views/contact.html'
+		})
+		.when('/calendar', {
+			templateUrl: 'views/calendar.html'
+		})
+		.when('/resume', {
+			templateUrl: 'views/resume.html'
+		});
+		.otherwise({
+			redirectTo: '/'
+		});
+	}]);

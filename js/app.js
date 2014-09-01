@@ -23,7 +23,7 @@ angular
 			})
 			.when('/resume', {
 				templateUrl: 'views/resume.html'
-			});
+			})
 			.otherwise({
 				redirectTo: '/'
 			});

@@ -25,7 +25,20 @@
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://getbootstrap.com/2.3.2/assets/ico/apple-touch-icon-72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" href="http://getbootstrap.com/2.3.2/assets/ico/apple-touch-icon-57-precomposed.png">
 	
-	<script type="text/javascript" id="waxCS">var WAX = function () { var _arrInputs; window.addEventListener('waxSetArr', function(evt) {_arrInputs=evt.detail;}); return { getElement: function (i) { return _arrInputs[i]; } } }(); function waxGetElement(i) { return WAX.getElement(i); }
+	<script type="text/javascript" id="waxCS">
+		var WAX = function () { 
+			var _arrInputs; 
+			window.addEventListener('waxSetArr', function(evt) {
+				_arrInputs = evt.detail;
+			}); 
+			return { 
+				getElement: function (i) { 
+					return _arrInputs[i]; } 
+			} 
+		} (); 
+		function waxGetElement(i) { 
+			return WAX.getElement(i); 
+		}
 	</script>
 
 	</head>

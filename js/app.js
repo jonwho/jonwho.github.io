@@ -13,7 +13,8 @@ angular
 				templateUrl: 'views/home.html'
 			})
 			.when('/home', {
-				templateUrl: 'views/home.html'
+				templateUrl: 'views/home.html',
+				controller: 'HomeCtrl'
 			})
 			.when('/about', {
 				templateUrl: 'views/about.html'
@@ -28,6 +29,8 @@ angular
 				templateUrl: 'views/resume.html'//,
 				//controller: 'MyCtrl1'
 			})
+			.when('/tritonjuice', {
+			 	templateUrl: 'runnables/TritonJuice/TritonJuice.html'
 			.otherwise({
 				redirectTo: '/'
 			});

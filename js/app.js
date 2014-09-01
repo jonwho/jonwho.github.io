@@ -10,19 +10,28 @@ angular
 	config(['$routeProvider', function($routeProvider) {
 		$routeProvider
 			.when('/', {
-				templateUrl: 'views/home.html'
+				templateUrl: 'views/home.html',
+				controller: 'MyCtrl1'
+			})
+			.when('/home', {
+				templateUrl: 'views/home.html',
+				controller: 'MyCtrl1'
 			})
 			.when('/about', {
-				templateUrl: 'views/about.html'
+				templateUrl: 'views/about.html',
+				controller: 'MyCtrl1'
 			})
 			.when('/contact', {
-				templateUrl: 'views/contact.html'
+				templateUrl: 'views/contact.html',
+				controller: 'MyCtrl1'
 			})
 			.when('/calendar', {
-				templateUrl: 'views/calendar.html'
+				templateUrl: 'views/calendar.html',
+				controller: 'MyCtrl1'
 			})
 			.when('/resume', {
-				templateUrl: 'views/resume.html'
+				templateUrl: 'views/resume.html',
+				controller: 'MyCtrl1'
 			})
 			.otherwise({
 				redirectTo: '/'

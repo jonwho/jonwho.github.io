@@ -7,7 +7,7 @@ angular.module('jonwho', [
 	'jonwho.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-	$routeProvider.when('/', {templateUrl: 'index.html'});
+	$routeProvider.when('/', {templateUrl: 'main.html'});
 	$routeProvider.when('/about', {templateUrl: 'views/about.html'});
 	$routeProvider.when('/contact', {templateUrl: 'views/contact.html'});
 	$routeProvider.when('/calendar', {templateUrl: 'views/calendar.html'});

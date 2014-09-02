@@ -5,33 +5,29 @@
 angular
 	.module('jonwho', [
 		'ngRoute',
+		'ngResource',
+		'ui.router',
 		'jonwho.controllers'
 	]).
 	config(['$routeProvider', function($routeProvider) {
 		$routeProvider
 			.when('/', {
-				templateUrl: 'views/home.html',
-				controller: 'MyCtrl1'
+				templateUrl: 'views/home.html'
 			})
 			.when('/home', {
-				templateUrl: 'views/home.html',
-				controller: 'MyCtrl1'
+				templateUrl: 'views/home.html'
 			})
 			.when('/about', {
-				templateUrl: 'views/about.html',
-				controller: 'MyCtrl1'
+				templateUrl: 'views/about.html'
 			})
 			.when('/contact', {
-				templateUrl: 'views/contact.html',
-				controller: 'MyCtrl1'
+				templateUrl: 'views/contact.html'
 			})
 			.when('/calendar', {
-				templateUrl: 'views/calendar.html',
-				controller: 'MyCtrl1'
+				templateUrl: 'views/calendar.html'
 			})
 			.when('/resume', {
-				templateUrl: 'views/resume.html',
-				controller: 'MyCtrl1'
+				templateUrl: 'views/resume.html'
 			})
 			.otherwise({
 				redirectTo: '/'

@@ -45,6 +45,14 @@ angular
 				url: '/home',
 				templateUrl: 'views/home.html'
 			})
+			.state('home.welcome', {
+				url: '/welcome',
+				templateUrl: 'views/partials/home-welcome.html'
+			})
+			.state('home.tritonjuice', {
+				url: '/tritonjuice',
+				templateUrl: 'runnables/TritonJuice/TritonJuice.html'
+			})
 			.state('about', {
 				url: '/about',
 				templateUrl: 'views/about.html'

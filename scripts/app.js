@@ -30,10 +30,6 @@ angular
 				url: '/about',
 				templateUrl: 'views/about.html'
 			})
-			.state('contact', {
-				url: '/contact',
-				templateUrl: 'views/contact.html'
-			})
 			.state('calendar', {
 				url: '/calendar',
 				templateUrl: 'views/calendar.html'

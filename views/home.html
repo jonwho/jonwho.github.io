@@ -1,21 +1,20 @@
 <div class="container-fluid">
 	<div class="row-fluid">
-		<div class="span3">
-			<div class="well sidebar-nav">
+		<div class="col-md-3">
+			<div class="well nav-sidebar">
 				<ul class="nav nav-list">
 					<li class="nav-header">Runnable Programs Online</li>
 					<li><a ui-sref=".tritonjuice">Triton Juice</a></li>
 					<li><a href="http://jonwho.github.io/gpacalc">GPA Calculator</a></li>
 					<li><a href="https://playwithfire.firebaseapp.com">Basic Chat</a></li>
-					<li><a ui-sref=".ng2048">2048
-					Game</a></li>
+					<li><a ui-sref=".ng2048">2048 Game</a></li>
 				</ul>
 			</div><!--/.well -->
-		</div><!--/span-->
+		</div><!--/col-->
 
-		<!-- Show runnable programs if clicked -->
-		<div ui-view class="span9">
-			<div class="hero-unit">
+		<!-- Show runnable programs if clicked sidebar otherwise defaults to below -->
+		<div ui-view class="col-md-9">
+			<div class="jumbotron">
 				<h1>Check out the things I've done!</h1>
 				<p>For example check out the code I've written on GitHub by clicking on Octocat.</p>
 				<p>
@@ -24,14 +23,14 @@
 				</p>
 			</div>
 			<div class="row-fluid">
-				<div class="span4">
+				<div class="col-md-4">
 				<h2>Computer Science?</h2>
 				<p>At first it was because I was undecided. I was a junior in high school yet I had no idea what I wanted to do for a living. I bounced around the idea of being a pharamcist or dentist. But those careers never really appealed to me like CS did. I was simply on the computer most of the time and everyone has that family member that they would ask for computer help, and that person was me! I mean I was good at it because I always tinkered with my computers. 
 				<br />
 				<br />
 				I never really thought about CS being a career until I watched a lecture given by Randy Pausch called "The Last Lecture". And what really hit me wasn't that he was a CS professor, but what he left behind was something significant. He changed the lives of his students and colleagues alike. And I wanted that kind of success. I wanted the success that comes with being great at your field of work. As soon as I wrote my first C program in high school, it really sunk in that this is my career, a career that impact the daily interactions of people I'll never meet. It is meaningful and enduring.</p>
-				</div><!--/span-->
-				<div class="span4">
+				</div><!--/col-->
+				<div class="col-md-4">
 					<h2>Hackathon</h2>
 					<p>I placed 2nd place in a challenge called Code Golf for programmers using C. The challenge was to implement the Leibniz Sum with the shortest amount of characters (whitespace & special characters included!).
 					<br />
@@ -41,12 +40,12 @@
 					<br />
 					In the end I was only behind the next C developer by .2 points. Which is something along the lines of 2 characters! So close yet so far.
 					</p>
-				</div><!--/span-->
-				<div class="span4">
+				</div><!--/col-->
+				<div class="col-md-4">
 					<h2>Sports</h2>
 					<p>I play a lot of sports inlucding basketball, tennis, table tennis, badminton, chess, checkers, and LoL (I consider it a sport!). I think what these all have in common is that I love competition. Skill sets can be refined and visually you can see your own improvements; be it jumpshot, backhand wing, or intellect, these components come into play against one another. To me mean winning means you developed a skill set that raises the level of play of not only yourself but amongst others as well. Competition drives success, and I love competition.
 					</p>
-				</div><!--/span-->
+				</div><!--/col-->
 			</div><!--/row-->
 		</div><!-- /ui-view-->
 	</div><!--/fluid-row-->

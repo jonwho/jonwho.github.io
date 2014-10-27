@@ -6,7 +6,8 @@ angular
 	.module('jonwho', [
 		'ngResource',
 		'ui.router',
-		'jonwho.controllers'
+		'jonwho.controllers',
+		'twentyfourtyeightApp' // nesting Angular apps
 	]).
 	config(function($stateProvider, $urlRouterProvider) {
 
@@ -18,14 +19,19 @@ angular
 				url: '/home',
 				templateUrl: 'views/home.html'
 			})
-			.state('home.welcome', {
-				url: '/welcome',
-				templateUrl: 'views/partials/home-welcome.html'
-			})
-			.state('home.tritonjuice', {
-				url: '/tritonjuice',
-				templateUrl: 'runnables/TritonJuice/TritonJuice.html'
-			})
+				// nested views
+				.state('home.welcome', {
+					url: '/welcome',
+					templateUrl: 'views/partials/home-welcome.html'
+				})
+				.state('home.ng2048', {
+					url: '/2048',
+					templateUrl: 'runnables/2048-in-AngularJS/ng2048.html'
+				})
+				.state('home.tritonjuice', {
+					url: '/tritonjuice',
+					templateUrl: 'runnables/TritonJuice/TritonJuice.html'
+				})
 			.state('about', {
 				url: '/about',
 				templateUrl: 'views/about.html'

@@ -1,0 +1,12 @@
+{
+	"name": "jonwho.github.io",
+	"version": "0.0.1",
+	"devDependencies": {
+		"grunt": "0.4.1",
+		"grunt-cli": "0.1.13",
+		"grunt-contrib-jshint": "0.10.0"
+	},
+	"scripts": {
+		"test": "grunt --verbose"
+	}
+}

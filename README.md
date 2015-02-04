@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jonwho/jonwho.github.io.svg)](https://travis-ci.org/jonwho/jonwho.github.io)
+
 [jonwho.github.io](http://jonwho.github.io)
 ================
 

@@ -6,10 +6,11 @@ angular
 	.module('jonwho', [
 		'ngResource',
 		'ui.router',
-		'jonwho.controllers',
+		'ngMaterial',
+		'jonwho.controllers', // technically another Angular app
 		'twentyfourtyeightApp' // nesting Angular apps
-	]).
-	config(function($stateProvider, $urlRouterProvider) {
+	])
+	.config(function($stateProvider, $urlRouterProvider) {
 
 		$urlRouterProvider.otherwise('/home');
 

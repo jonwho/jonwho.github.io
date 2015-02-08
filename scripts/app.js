@@ -6,6 +6,8 @@ angular
 	.module('jonwho', [
 		'ngResource',
 		'ui.router',
+		'ngAnimate',
+		'ngAria',
 		'ngMaterial',
 		'jonwho.controllers', // technically another Angular app
 		'twentyfourtyeightApp' // nesting Angular apps

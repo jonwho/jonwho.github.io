@@ -30,8 +30,8 @@ angular.module('jonwho.controllers', [])
 
   	// need this to fix conflict issue on ui.bootstrap vs ngAnimate
   	$timeout(function() {
-  		$animate.enabled(false, angular.element(".carousel"));
-  	})
+  		$animate.enabled(false, angular.element('.carousel'));
+  	});
   }])
   .controller('MyCtrl2', ['$scope', function($scope) {
   	$scope.msg = 'nother ctrl';

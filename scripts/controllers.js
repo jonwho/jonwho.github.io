@@ -10,11 +10,6 @@ angular.module('jonwho.controllers', [])
   	$scope.interval = 5000;
   	var slides = $scope.slides = [];
 
-  	slides.push({
-  		image: '',
-  		text: 'Welcome!'
-  	});
-
   	// add intern game
   	slides.push({
   		image: '../res/projects/scotttheintern/banner.png',

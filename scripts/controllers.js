@@ -10,6 +10,18 @@ angular.module('jonwho.controllers', [])
   	$scope.interval = 5000;
   	var slides = $scope.slides = [];
 
+  	// add intern game first
+  	slides.push({
+  		image: '../res/projects/scotttheintern/banner.png',
+  		text: 'A little video game written in C#'
+  	});
+
+  	// add ubi comp project
+  	slides.push({
+  		image: '../res/projects/speedydragons/speedy.jpg',
+  		text: 'Ubiquitous Computing project'
+  	});
+
   	$scope.addSlide = function() {
   		var newWidth = 600 + slides.length + 1;
   		slides.push({
@@ -19,7 +31,7 @@ angular.module('jonwho.controllers', [])
   		});
   	};
 
-  	for(var i = 0; i < 4; i++) {
+  	for(var i = 0; i < 2; i++) {
   		$scope.addSlide();
   	}
 

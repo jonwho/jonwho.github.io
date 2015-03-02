@@ -5,10 +5,11 @@
 angular
 	.module('jonwho', [
 		'ngResource',
-		'ui.router',
 		'ngAnimate',
 		'ngAria',
 		'ngMaterial',
+		'ui.router',
+		'ui.bootstrap',
 		'jonwho.controllers', // technically another Angular app
 		'twentyfourtyeightApp' // nesting Angular apps
 	])
@@ -38,6 +39,10 @@ angular
 			.state('about', {
 				url: '/about',
 				templateUrl: 'views/about.html'
+			})
+			.state('projects', {
+				url: '/projects',
+				templateUrl: 'views/projects.html'
 			})
 			.state('calendar', {
 				url: '/calendar',

@@ -32,7 +32,7 @@
 				<div style="height: 305px">
 					<carousel interval="interval">
 						<slide ng-repeat="slide in slides" active="slide.active">
-							<img ng-src="{{slide.image}}" style="margin:auto;" height=auto>
+							<a ui-sref='projects'><img ng-src="{{slide.image}}" style="margin:auto;" height=auto></a>
 							<div class="carousel-caption">
 								<h4 style="color:black">{{slide.text}}</h4>
 								<p></p>

@@ -10,7 +10,12 @@ angular.module('jonwho.controllers', [])
   	$scope.interval = 5000;
   	var slides = $scope.slides = [];
 
-  	// add intern game first
+  	slides.push({
+  		image: '',
+  		text: 'Welcome!'
+  	});
+
+  	// add intern game
   	slides.push({
   		image: '../res/projects/scotttheintern/banner.png',
   		text: 'A little video game written in C#'
@@ -22,18 +27,11 @@ angular.module('jonwho.controllers', [])
   		text: 'Ubiquitous Computing project'
   	});
 
-  	$scope.addSlide = function() {
-  		var newWidth = 600 + slides.length + 1;
-  		slides.push({
-  			image: 'http://placekitten.com/' + newWidth + '/300',
-  			text: ['More', 'Extra', 'Lots of', 'Surplus'][slides.length % 4] + ' ' +
-  			  ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
-  		});
-  	};
-
-  	for(var i = 0; i < 2; i++) {
-  		$scope.addSlide();
-  	}
+  	// add augmonted
+  	slides.push({
+  		image: '../res/projects/augmonted/augmonted.jpg',
+  		text: 'Augmented Reality video game for Android'
+  	});
 
   	// need this to fix conflict issue on ui.bootstrap vs ngAnimate
   	$timeout(function() {

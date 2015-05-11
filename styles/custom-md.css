@@ -2,7 +2,12 @@
  * Customize parts of Material Design.
  */
 
-md-card {
+/*md-card {
   max-width: 50%;
+  max-height: 50%;
+}*/
+
+#me {
+  max-width: 66%;
   max-height: 50%;
 }

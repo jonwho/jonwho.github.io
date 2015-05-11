@@ -1,55 +1,21 @@
 'use strict';
 
+// Dependencies
+var app = angular
+  .module('jonwho', [
+    'ngAria',
+    'ngMaterial',
+    'ui.router',
+    'ng-mfb'
+]);
 
-// Declare app level module which depends on filters, and services
-angular
-	.module('jonwho', [
-		'ngResource',
-		'ngAnimate',
-		'ngAria',
-		'ngMaterial',
-		'ui.router',
-		'ui.bootstrap',
-		'jonwho.controllers', // technically another Angular app
-		'twentyfourtyeightApp' // nesting Angular apps
-	])
-	.config(function($stateProvider, $urlRouterProvider) {
+// Routing
+app.config(function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/');
 
-		$urlRouterProvider.otherwise('/home');
-
-		$stateProvider
-			// home states and nested views
-			.state('home', {
-				url: '/home',
-				templateUrl: 'views/home.html'
-			})
-				// nested views
-				.state('home.welcome', {
-					url: '/welcome',
-					templateUrl: 'views/partials/home-welcome.html'
-				})
-				.state('home.ng2048', {
-					url: '/2048',
-					templateUrl: 'runnables/2048-in-AngularJS/ng2048.html'
-				})
-				.state('home.tritonjuice', {
-					url: '/tritonjuice',
-					templateUrl: 'runnables/TritonJuice/TritonJuice.html'
-				})
-			.state('about', {
-				url: '/about',
-				templateUrl: 'views/about.html'
-			})
-			.state('projects', {
-				url: '/projects',
-				templateUrl: 'views/projects.html'
-			})
-			.state('calendar', {
-				url: '/calendar',
-				templateUrl: 'views/calendar.html'
-			})
-			.state('resume', {
-				url: '/resume',
-				templateUrl: 'views/resume.html'
-			});
-	});
+    $stateProvider
+      .state('/', {
+        url: '/',
+        templateUrl: '../index.html'
+      });
+});

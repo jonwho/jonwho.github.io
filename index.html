@@ -15,11 +15,24 @@
 
   <!-- Custom Material Design -->
   <link rel="stylesheet" href="/styles/custom-md.css">
-  <title>msgee</title>
+  <title>Jon Ho</title>
 </head>
 <body ng-app="jonwho">
   <!-- Single column (whole app) -->
-  <div layout="column"> 
+  <div layout="column">
+
+    <md-toolbar class="md-tall" md-scroll-shrink>
+    <div class="md-toolbar-tools" layout="row" layout-sm="column" layout-margin layout-fill layout-align="start end">
+      <h1 class="md-display-2">jonwho?</h1>
+      <!-- fill up the space between left and right area -->
+      <span flex></span>
+      <md-button>
+        Right Bar Button
+      </md-button>
+    </div>
+    </md-toolbar>
+
+    <md-content> 
     <div layout="row" layout-sm="column" layout-align="center center">
       <md-card id="me">
         <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/mYUiSeqqgDY" frameborder="0" allowfullscreen></iframe> -->
@@ -37,7 +50,7 @@
     </div>
 
     <div layout="row" layout-sm="column" layout-align="center center">
-      <md-card id="me">
+      <md-card id="about">
         <img src="http://weknowmemes.com/wp-content/uploads/2011/10/dat-ass-link.png" alt="test img">
         <md-card-content>
           <h2 class="md-title">I'm a title</h2>
@@ -52,8 +65,74 @@
       </md-card>
     </div>
 
+    <div layout="row" layout-sm="column" layout-align="center center">
+      <md-card id="exp">
+        <img src="http://weknowmemes.com/wp-content/uploads/2011/10/dat-ass-link.png" alt="test img">
+        <md-card-content>
+          <h2 class="md-title">I'm a title</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac turpis diam. Ut pellentesque aliquet dolor, a fermentum sapien vestibulum sed. Sed bibendum egestas dignissim. Donec convallis arcu a sapien tempor mollis. Phasellus non commodo dolor. Aenean consequat arcu eget commodo convallis. Suspendisse fermentum iaculis augue.
+          </p>
+          <div class="md-actions" layout="row" layout-align="end center">
+            <md-button>Share</md-button>
+            <md-button>Reply</md-button>
+          </div>
+        </md-card-content>
+      </md-card>
+    </div>
+
+    <div layout="row" layout-sm="column" layout-align="center center">
+      <md-card id="skills">
+        <img src="http://weknowmemes.com/wp-content/uploads/2011/10/dat-ass-link.png" alt="test img">
+        <md-card-content>
+          <h2 class="md-title">I'm a title</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac turpis diam. Ut pellentesque aliquet dolor, a fermentum sapien vestibulum sed. Sed bibendum egestas dignissim. Donec convallis arcu a sapien tempor mollis. Phasellus non commodo dolor. Aenean consequat arcu eget commodo convallis. Suspendisse fermentum iaculis augue.
+          </p>
+          <div class="md-actions" layout="row" layout-align="end center">
+            <md-button>Share</md-button>
+            <md-button>Reply</md-button>
+          </div>
+        </md-card-content>
+      </md-card>
+    </div>
+
+    <div layout="row" layout-sm="column" layout-align="center center">
+      <md-card id="projects">
+        <img src="http://weknowmemes.com/wp-content/uploads/2011/10/dat-ass-link.png" alt="test img">
+        <md-card-content>
+          <h2 class="md-title">I'm a title</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac turpis diam. Ut pellentesque aliquet dolor, a fermentum sapien vestibulum sed. Sed bibendum egestas dignissim. Donec convallis arcu a sapien tempor mollis. Phasellus non commodo dolor. Aenean consequat arcu eget commodo convallis. Suspendisse fermentum iaculis augue.
+          </p>
+          <div class="md-actions" layout="row" layout-align="end center">
+            <md-button>Share</md-button>
+            <md-button>Reply</md-button>
+          </div>
+        </md-card-content>
+      </md-card>
+    </div>
+
+    <!-- Will most likely drop this portion and just stick it to toolbar or sidenav -->
+    <div layout="row" layout-sm="column" layout-align="center center">
+      <md-card id="resume">
+        <img src="http://weknowmemes.com/wp-content/uploads/2011/10/dat-ass-link.png" alt="test img">
+        <md-card-content>
+          <h2 class="md-title">I'm a title</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac turpis diam. Ut pellentesque aliquet dolor, a fermentum sapien vestibulum sed. Sed bibendum egestas dignissim. Donec convallis arcu a sapien tempor mollis. Phasellus non commodo dolor. Aenean consequat arcu eget commodo convallis. Suspendisse fermentum iaculis augue.
+          </p>
+          <div class="md-actions" layout="row" layout-align="end center">
+            <md-button>Share</md-button>
+            <md-button>Reply</md-button>
+          </div>
+        </md-card-content>
+      </md-card>
+    </div>
+    </md-content>
+
     <nav mfb-menu position="br" effect="zoomin" 
-         active-icon="ion-close-round" resting-icon="ion-plus-round"
+         active-icon="ion-close-round" resting-icon="ion-more"
          toggling-method="click">
       <button mfb-button icon="ion-social-octocat" label="GitHub"
               onclick="location.href='http://github.com/jonwho';"></button>

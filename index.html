@@ -17,19 +17,22 @@
   <link rel="stylesheet" href="/styles/custom-md.css">
   <title>Jon Ho</title>
 </head>
-<body ng-app="jonwho">
+<body ng-app="jonwho" ng-controller="NavCtrl as nav">
   <!-- Single column (whole app) -->
   <div layout="column">
 
-    <md-toolbar md-scroll-shrink>
-    <div class="md-toolbar-tools" layout="row" layout-sm="column" layout-align="center">
-      <h1 class="md-display-2" style="margin-right: 50%;">jonwho?</h1>
-    </div>
+    <md-toolbar layout="row">
+      <div class="md-toolbar-tools">
+        <md-button hide-gt-sm ng-click="ul.toggleList()" aria-label="Show Links">
+          <md-icon md-svg-icon="/bower_components/ionicons/src/navicon-round.svg"></md-icon>
+        </md-button>
+        <h1>jonwho?</h1>
+      </div>
     </md-toolbar>
 
     <md-content> 
     <div layout="row" layout-sm="column" layout-align="center center">
-      <md-card id="me">
+      <md-card class="md-whiteframe-z5" id="me">
         <md-card-content>
           <h2 class="md-title">I'm a title</h2>
           <p>
@@ -38,6 +41,9 @@
           <div class="md-actions" layout="row" layout-align="end center">
             <md-button>Share</md-button>
             <md-button>Reply</md-button>
+            <md-button aria-label="label">
+              <md-icon md-svg-icon="/bower_components/ionicons/src/navicon-round.svg"></md-icon>
+            </md-button>
           </div>
         </md-card-content>
       </md-card>
@@ -163,5 +169,6 @@
 
   <!-- Local development -->
   <script src="/scripts/app.js"></script>
+  <script src="/scripts/controllers.js"></script>
 </body>
 </html>

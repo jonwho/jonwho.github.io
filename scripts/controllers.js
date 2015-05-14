@@ -14,11 +14,12 @@ angular
         avatar: '../bower_components/ionicons/src/briefcase.svg',
         templateUrl: '../views/experience.html'
       },
-      {
-        name: 'Skills',
-        avatar: '../bower_components/ionicons/src/settings.svg',
-        templateUrl: '../views/skills.html'
-      },
+      // remove skills page for now
+      // {
+      //   name: 'Skills',
+      //   avatar: '../bower_components/ionicons/src/settings.svg',
+      //   templateUrl: '../views/skills.html'
+      // },
       {
         name: 'Projects',
         avatar: '../bower_components/ionicons/src/code.svg',

@@ -6,6 +6,7 @@ var app = angular
     'ngAria',
     'ngMaterial',
     'ngAnimate',
+    'ngTouch',
     'ui.router',
     'ng-mfb'
 ]);

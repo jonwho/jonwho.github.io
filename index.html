@@ -35,7 +35,7 @@
         <md-item ng-repeat="link in users">
           <md-button ng-click="selectUser(link)" ng-class="{'selected' : link === selected}">
             <md-icon md-svg-icon="{{link.avatar}}" class="avatar"></md-icon>
-            {{link.name}}
+            <strong>{{link.name}}</strong>
           </md-button>
         </md-item>
       </md-list>
@@ -43,7 +43,13 @@
 
     <!-- Content inside md-content is scrollable -->
     <md-content flex id="content">
-      <div class="slide-animate" ng-include="selected.templateUrl"></div>
+      <!-- Animations are a bit buggy right now -->
+      <!-- <div class="slide-animate" ng-include="selected.templateUrl"
+           layout="row" layout-sm="column" layout-align="center center">
+      </div> -->
+      <div ng-include="selected.templateUrl"
+           layout="column" layout-sm="column" layout-align="center center">
+      </div>
     </md-content>
   </div>
 
@@ -74,7 +80,8 @@
   <script src="/bower_components/angular/angular.js"></script>
   <script src="/bower_components/angular-aria/angular-aria.js"></script>
   <script src="/bower_components/angular-animate/angular-animate.js"></script>
-  <script src="/bower_components/angular-material/angular-material.js"></script> 
+  <script src="/bower_components/angular-material/angular-material.js"></script>
+  <script src="/bower_components/angular-touch/angular-touch.js"></script> 
   
   <!-- Angular ui-router // include after angular -->
   <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>

@@ -14,136 +14,67 @@
   <link rel="stylesheet" href="/bower_components/ionicons/css/ionicons.css">
 
   <!-- Custom Material Design -->
-  <link rel="stylesheet" href="/styles/custom-md.css">
+  <link rel="stylesheet" href="/styles/custom.css">
   <title>Jon Ho</title>
 </head>
-<body ng-app="jonwho" ng-controller="NavCtrl as nav">
-  <!-- Single column (whole app) -->
-  <div layout="column">
+<!-- Single column (whole app) -->
+<body ng-app="jonwho" layout="column" ng-controller="NavCtrl">
 
-    <md-toolbar layout="row">
-      <div class="md-toolbar-tools">
-        <md-button hide-gt-sm ng-click="ul.toggleList()" aria-label="Show Links">
-          <md-icon md-svg-icon="/bower_components/ionicons/src/navicon-round.svg"></md-icon>
-        </md-button>
-        <h1>jonwho?</h1>
+  <md-toolbar layout="row">
+    <div class="md-toolbar-tools">
+      <md-button hide-gt-sm ng-click="toggleList()" aria-label="Show Links">
+        <md-icon md-svg-icon="/bower_components/ionicons/src/navicon-round.svg"></md-icon>
+      </md-button>
+      <h1>jonwho?</h1>
+    </div>
+  </md-toolbar>
+
+  <div flex layout="row">
+    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
+      <md-list>
+        <md-item ng-repeat="link in users">
+          <md-button ng-click="selectUser(link)" ng-class="{'selected' : link === selected}">
+            <md-icon md-svg-icon="{{link.avatar}}" class="avatar"></md-icon>
+            {{link.name}}
+          </md-button>
+        </md-item>
+      </md-list>
+    </md-sidenav>
+
+    <!-- Content inside md-content is scrollable -->
+    <md-content flex id="content"> 
+      <div layout="row" layout-sm="column" layout-align="center center">
+        <md-card class="md-whiteframe-z5" id="me">
+          <md-card-content>
+            <h2 class="md-title">I'm a title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac turpis diam. Ut pellentesque aliquet dolor, a fermentum sapien vestibulum sed. Sed bibendum egestas dignissim. Donec convallis arcu a sapien tempor mollis. Phasellus non commodo dolor. Aenean consequat arcu eget commodo convallis. Suspendisse fermentum iaculis augue.
+            </p>
+            <div class="md-actions" layout="row" layout-align="end center">
+              <md-button>Share</md-button>
+              <md-button>Reply</md-button>
+              <md-button aria-label="label">
+                <md-icon md-svg-icon="/bower_components/ionicons/src/navicon-round.svg"></md-icon>
+              </md-button>
+            </div>
+          </md-card-content>
+        </md-card>
       </div>
-    </md-toolbar>
-
-    <md-content> 
-    <div layout="row" layout-sm="column" layout-align="center center">
-      <md-card class="md-whiteframe-z5" id="me">
-        <md-card-content>
-          <h2 class="md-title">I'm a title</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac turpis diam. Ut pellentesque aliquet dolor, a fermentum sapien vestibulum sed. Sed bibendum egestas dignissim. Donec convallis arcu a sapien tempor mollis. Phasellus non commodo dolor. Aenean consequat arcu eget commodo convallis. Suspendisse fermentum iaculis augue.
-          </p>
-          <div class="md-actions" layout="row" layout-align="end center">
-            <md-button>Share</md-button>
-            <md-button>Reply</md-button>
-            <md-button aria-label="label">
-              <md-icon md-svg-icon="/bower_components/ionicons/src/navicon-round.svg"></md-icon>
-            </md-button>
-          </div>
-        </md-card-content>
-      </md-card>
-    </div>
-
-    <div layout="row" layout-sm="column" layout-align="center center">
-      <md-card id="about">
-        <img src="http://weknowmemes.com/wp-content/uploads/2011/10/dat-ass-link.png" alt="test img">
-        <md-card-content>
-          <h2 class="md-title">I'm a title</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac turpis diam. Ut pellentesque aliquet dolor, a fermentum sapien vestibulum sed. Sed bibendum egestas dignissim. Donec convallis arcu a sapien tempor mollis. Phasellus non commodo dolor. Aenean consequat arcu eget commodo convallis. Suspendisse fermentum iaculis augue.
-          </p>
-          <div class="md-actions" layout="row" layout-align="end center">
-            <md-button>Share</md-button>
-            <md-button>Reply</md-button>
-          </div>
-        </md-card-content>
-      </md-card>
-    </div>
-
-    <div layout="row" layout-sm="column" layout-align="center center">
-      <md-card id="exp">
-        <img src="http://weknowmemes.com/wp-content/uploads/2011/10/dat-ass-link.png" alt="test img">
-        <md-card-content>
-          <h2 class="md-title">I'm a title</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac turpis diam. Ut pellentesque aliquet dolor, a fermentum sapien vestibulum sed. Sed bibendum egestas dignissim. Donec convallis arcu a sapien tempor mollis. Phasellus non commodo dolor. Aenean consequat arcu eget commodo convallis. Suspendisse fermentum iaculis augue.
-          </p>
-          <div class="md-actions" layout="row" layout-align="end center">
-            <md-button>Share</md-button>
-            <md-button>Reply</md-button>
-          </div>
-        </md-card-content>
-      </md-card>
-    </div>
-
-    <div layout="row" layout-sm="column" layout-align="center center">
-      <md-card id="skills">
-        <img src="http://weknowmemes.com/wp-content/uploads/2011/10/dat-ass-link.png" alt="test img">
-        <md-card-content>
-          <h2 class="md-title">I'm a title</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac turpis diam. Ut pellentesque aliquet dolor, a fermentum sapien vestibulum sed. Sed bibendum egestas dignissim. Donec convallis arcu a sapien tempor mollis. Phasellus non commodo dolor. Aenean consequat arcu eget commodo convallis. Suspendisse fermentum iaculis augue.
-          </p>
-          <div class="md-actions" layout="row" layout-align="end center">
-            <md-button>Share</md-button>
-            <md-button>Reply</md-button>
-          </div>
-        </md-card-content>
-      </md-card>
-    </div>
-
-    <div layout="row" layout-sm="column" layout-align="center center">
-      <md-card id="projects">
-        <img src="http://weknowmemes.com/wp-content/uploads/2011/10/dat-ass-link.png" alt="test img">
-        <md-card-content>
-          <h2 class="md-title">I'm a title</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac turpis diam. Ut pellentesque aliquet dolor, a fermentum sapien vestibulum sed. Sed bibendum egestas dignissim. Donec convallis arcu a sapien tempor mollis. Phasellus non commodo dolor. Aenean consequat arcu eget commodo convallis. Suspendisse fermentum iaculis augue.
-          </p>
-          <div class="md-actions" layout="row" layout-align="end center">
-            <md-button>Share</md-button>
-            <md-button>Reply</md-button>
-          </div>
-        </md-card-content>
-      </md-card>
-    </div>
-
-    <!-- Will most likely drop this portion and just stick it to toolbar or sidenav -->
-    <div layout="row" layout-sm="column" layout-align="center center">
-      <md-card id="resume">
-        <img src="http://weknowmemes.com/wp-content/uploads/2011/10/dat-ass-link.png" alt="test img">
-        <md-card-content>
-          <h2 class="md-title">I'm a title</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac turpis diam. Ut pellentesque aliquet dolor, a fermentum sapien vestibulum sed. Sed bibendum egestas dignissim. Donec convallis arcu a sapien tempor mollis. Phasellus non commodo dolor. Aenean consequat arcu eget commodo convallis. Suspendisse fermentum iaculis augue.
-          </p>
-          <div class="md-actions" layout="row" layout-align="end center">
-            <md-button>Share</md-button>
-            <md-button>Reply</md-button>
-          </div>
-        </md-card-content>
-      </md-card>
-    </div>
     </md-content>
-
-    <nav mfb-menu position="br" effect="zoomin" 
-         active-icon="ion-close-round" resting-icon="ion-more"
-         toggling-method="click">
-      <button mfb-button icon="ion-social-octocat" label="GitHub"
-              onclick="location.href='http://github.com/jonwho';"></button>
-      <button mfb-button icon="ion-social-linkedin" label="LinkedIn"
-              onclick="location.href='http://linkedin.com/in/jonwho';"></button>
-      <button mfb-button icon="ion-social-twitter" label="Twitter"
-              onclick="location.href='http://twitter.com/lj080805';"></button>
-      <button mfb-button icon="ion-email" label="Email"
-              onclick="location.href='mailto:housuilun@yahoo.com';"></button>                        
-    </nav>
   </div>
+
+  <nav mfb-menu position="br" effect="zoomin" 
+       active-icon="ion-close-round" resting-icon="ion-more"
+       toggling-method="click">
+    <button mfb-button icon="ion-social-octocat" label="GitHub"
+            onclick="location.href='http://github.com/jonwho';"></button>
+    <button mfb-button icon="ion-social-linkedin" label="LinkedIn"
+            onclick="location.href='http://linkedin.com/in/jonwho';"></button>
+    <button mfb-button icon="ion-social-twitter" label="Twitter"
+            onclick="location.href='http://twitter.com/lj080805';"></button>
+    <button mfb-button icon="ion-email" label="Email"
+            onclick="location.href='mailto:housuilun@yahoo.com';"></button>                        
+  </nav>
 
   <!-- Google Analytics -->
   <script>

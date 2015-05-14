@@ -1,0 +1,66 @@
+/* General */
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Toolbar */
+
+.menu {
+
+}
+
+md-toolbar h1 {
+  margin: auto; /* this made it center, pretty neat */
+}
+
+/* Sidenav */
+
+md-sidenav {
+  overflow: hidden; /* hide vertical and horizontal scrollbars */
+}
+
+md-list .md-button {
+  color: inherit;
+  font-weight: 500;
+  text-align: left;
+  width: 100%; /* use up all width given by sidenav */
+}
+
+md-list .md-button.selected {
+  color: #03a9f4; /* selected link is blue highlighted */
+}
+
+md-sidenav md-list {
+  padding: 0px 0px 0px 0px;
+}
+
+/* Content */
+
+#content {
+  overflow: hidden;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+}
+
+/* Icons */
+
+.avatar {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0px;
+  vertical-align: middle;
+  zoom:0.70;
+  transform: translateZ(0);
+  -webkit-transform: scale(0.70);
+  -moz-transform:scale(0.70);
+}

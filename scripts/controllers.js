@@ -7,22 +7,22 @@ angular
       {
         name: 'Jon Ho',
         avatar: '../bower_components/ionicons/src/person.svg',
-        templateUrl: '../views/test1.html'
+        templateUrl: '../views/me.html'
       },
       {
         name: 'Experience',
         avatar: '../bower_components/ionicons/src/briefcase.svg',
-        templateUrl: '../views/test2.html'
+        templateUrl: '../views/experience.html'
       },
       {
         name: 'Projects',
         avatar: '../bower_components/ionicons/src/code.svg',
-        templateUrl: '../views/test1.html'
+        templateUrl: '../views/projects.html'
       },
       {
         name: 'Resume',
         avatar: '../bower_components/ionicons/src/document-text.svg',
-        templateUrl: '../views/test2.html'
+        templateUrl: '../views/resume.html'
       }
     ];
 

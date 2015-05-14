@@ -5,6 +5,7 @@ var app = angular
   .module('jonwho', [
     'ngAria',
     'ngMaterial',
+    'ngAnimate',
     'ui.router',
     'ng-mfb'
 ]);

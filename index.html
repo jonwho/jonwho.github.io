@@ -42,24 +42,8 @@
     </md-sidenav>
 
     <!-- Content inside md-content is scrollable -->
-    <md-content flex id="content"> 
-      <div layout="row" layout-sm="column" layout-align="center center">
-        <md-card class="md-whiteframe-z5" id="me">
-          <md-card-content>
-            <h2 class="md-title">I'm a title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac turpis diam. Ut pellentesque aliquet dolor, a fermentum sapien vestibulum sed. Sed bibendum egestas dignissim. Donec convallis arcu a sapien tempor mollis. Phasellus non commodo dolor. Aenean consequat arcu eget commodo convallis. Suspendisse fermentum iaculis augue.
-            </p>
-            <div class="md-actions" layout="row" layout-align="end center">
-              <md-button>Share</md-button>
-              <md-button>Reply</md-button>
-              <md-button aria-label="label">
-                <md-icon md-svg-icon="/bower_components/ionicons/src/navicon-round.svg"></md-icon>
-              </md-button>
-            </div>
-          </md-card-content>
-        </md-card>
-      </div>
+    <md-content flex id="content">
+      <div class="slide-animate" ng-include="selected.templateUrl"></div>
     </md-content>
   </div>
 
@@ -101,5 +85,6 @@
   <!-- Local development -->
   <script src="/scripts/app.js"></script>
   <script src="/scripts/controllers.js"></script>
+  <script src="/scripts/animations.js"></script>
 </body>
 </html>

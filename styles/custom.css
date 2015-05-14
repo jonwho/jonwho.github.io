@@ -20,7 +20,7 @@ md-toolbar h1 {
 /* Sidenav */
 
 md-sidenav {
-  overflow: hidden; /* hide vertical and horizontal scrollbars */
+  overflow-x: hidden; /* hide horizontal scrollbar */
 }
 
 md-list .md-button {
@@ -53,8 +53,10 @@ md-sidenav md-list {
   position: relative;
   width: 128px;
   height: 128px;
+  /* these 2 lines circles the icon
   border: 1px solid #ddd;
   border-radius: 50%;
+  */
   display: inline-block;
   overflow: hidden;
   margin: 0px;

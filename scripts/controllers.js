@@ -15,14 +15,19 @@ angular
         templateUrl: '../views/experience.html'
       },
       {
+        name: 'Skills',
+        avatar: '../bower_components/ionicons/src/settings.svg',
+        templateUrl: '../views/skills.html'
+      },
+      {
         name: 'Projects',
         avatar: '../bower_components/ionicons/src/code.svg',
         templateUrl: '../views/projects.html'
       },
       {
-        name: 'Resume',
-        avatar: '../bower_components/ionicons/src/document-text.svg',
-        templateUrl: '../views/resume.html'
+        name: 'Contact',
+        avatar: '../bower_components/ionicons/src/person-add.svg',
+        templateUrl: '../views/contact.html'
       }
     ];
 

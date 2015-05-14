@@ -1,110 +1,97 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="jonwho" class="no-js">
-<object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 0px; height: 0px; display: block;"></object>
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta charset="utf-8">
-	<title>Jon Ho</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Personal webpage for Jonathan Wilson Ho. Computer Science and Engineering student at the University of California, San Diego.">
-	<meta name="author" content="Jonathan Ho">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 
-	<!-- Ze jQuery -->
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <!-- Material Design -->
+  <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
 
-	<!-- Le styles -->
+  <!-- MFB directive -->
+  <link rel="stylesheet" href="/bower_components/ng-mfb/mfb/dist/mfb.css">
 
-	<!-- 2048 CSS file -->
-	<link href="runnables/2048-in-AngularJS/styles/main.css" rel="stylesheet">
+  <!-- Ionic Icons -->
+  <link rel="stylesheet" href="/bower_components/ionicons/css/ionicons.css">
 
-	<!-- General CSS for site -->
-	<link href="css/index.css" rel="stylesheet">
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	
-	<!-- Material Design CSS -->
-	<!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.7.1/angular-material.min.css"> -->
+  <!-- Custom Material Design -->
+  <link rel="stylesheet" href="/styles/custom.css">
+  <title>Jon Ho</title>
+</head>
+<!-- Single column (whole app) -->
+<body ng-app="jonwho" layout="column" ng-controller="NavCtrl">
 
-	<!-- Bootstrap CSS-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <md-toolbar layout="row">
+    <div class="md-toolbar-tools">
+      <md-button hide-gt-sm ng-click="toggleList()" aria-label="Show Links">
+        <md-icon md-svg-icon="/bower_components/ionicons/src/navicon-round.svg"></md-icon>
+      </md-button>
+      <h1>jonwho?</h1>
+    </div>
+  </md-toolbar>
 
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-		<script src="../assets/js/html5shiv.js"></script>
-	<![endif]-->
+  <div flex layout="row">
+    <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
+      <md-list>
+        <md-item ng-repeat="link in users">
+          <md-button ng-click="selectUser(link)" ng-class="{'selected' : link === selected}">
+            <md-icon md-svg-icon="{{link.avatar}}" class="avatar"></md-icon>
+            <strong>{{link.name}}</strong>
+          </md-button>
+        </md-item>
+      </md-list>
+    </md-sidenav>
 
-	</head>
-	<body>
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<!-- Collapse for mobile view -->
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-		            <span class="sr-only">Toggle navigation</span>
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-		          </button>
-					<a class="navbar-brand" ui-sref="home">jonwho?</a>
-				</div>
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li><a ui-sref="home">Home</a></li>
-						<li><a ui-sref="about">About</a></li>
-						<li><a ui-sref="projects">Projects</a></li>
-						<li><a ui-sref="resume">Resume</a></li>
-					</ul>
-				</div><!--/.nav-collapse -->
-			</div>
-		</nav><!-- end navbar -->
+    <!-- Content inside md-content is scrollable -->
+    <md-content flex id="content">
+      <!-- Animations are a bit buggy right now -->
+      <!-- <div class="slide-animate" ng-include="selected.templateUrl"
+           layout="row" layout-sm="column" layout-align="center center">
+      </div> -->
+      <div ng-include="selected.templateUrl"
+           layout="column" layout-sm="column" layout-align="center center">
+      </div>
+    </md-content>
+  </div>
 
-		<!-- Use ui-router for dynamic views -->
-		<div ui-view></div>
+  <nav mfb-menu position="br" effect="zoomin" 
+       active-icon="ion-close-round" resting-icon="ion-more"
+       toggling-method="click">
+    <button mfb-button icon="ion-social-octocat" label="GitHub"
+            onclick="location.href='http://github.com/jonwho';"></button>
+    <button mfb-button icon="ion-social-linkedin" label="LinkedIn"
+            onclick="location.href='http://linkedin.com/in/jonwho';"></button>
+    <button mfb-button icon="ion-social-twitter" label="Twitter"
+            onclick="location.href='http://twitter.com/lj080805';"></button>
+    <button mfb-button icon="ion-email" label="Email"
+            onclick="location.href='mailto:housuilun@yahoo.com';"></button>                        
+  </nav>
 
-		<hr>
-		<footer>
-			<p>
-				<div>
-					&copy; Jon Ho 2015
-					<a href="http://github.com/jonwho"><i class="fa fa-github-square fa-lg pull-right"></i></a>
-					<a href="http://www.linkedin.com/in/jonwho/"><i class="fa fa-linkedin-square fa-lg pull-right"></i></a>
-					<a href="http://twitter.com/lj080805"><i class="fa fa-twitter-square fa-lg pull-right"></i></a>
-					<a href="mailto:housuilun@yahoo.com"><i class="fa fa-envelope fa-lg pull-right"></i></a>
-				</div>
-			</p>
-		</footer>
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-62804096-1', 'auto');
+  ga('send', 'pageview');
+  </script>
 
-		<!-- Use AngularJS -->
-		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
-		<!-- Use ui-router -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
-		<!-- Use resource -->
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
-		<!-- Use cookies -->
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular-cookies.js"></script>
-		<!-- Use angular-ui -->
-		<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.js"></script>
+  <!-- Angular -->
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-aria/angular-aria.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.js"></script>
+  <script src="/bower_components/angular-material/angular-material.js"></script>
+  <script src="/bower_components/angular-touch/angular-touch.js"></script> 
+  
+  <!-- Angular ui-router // include after angular -->
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 
-		<!-- Angular Material Dependencies -->
-		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js"></script>
-		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria.min.js"></script>
+  <!-- MFB directive -->
+  <script src="/bower_components/ng-mfb/src/mfb-directive.js"></script>
 
-		<!-- Angular Material Javascript -->
-		<script src="//ajax.googleapis.com/ajax/libs/angular_material/0.7.1/angular-material.min.js"></script>
-
-		<!-- my AngularJS files -->
-		<script src="scripts/app.js"></script>
-		<script src="scripts/controllers.js"></script>
-
-		<!-- 2048 AngularJS files -->
-		<script src="runnables/2048-in-AngularJS/scripts/app.js"></script>
-		<script src="runnables/2048-in-AngularJS/scripts/grid/grid.js"></script>
-		<script src="runnables/2048-in-AngularJS/scripts/grid/grid_directive.js"></script>
-		<script src="runnables/2048-in-AngularJS/scripts/grid/tile_directive.js"></script>
-		<script src="runnables/2048-in-AngularJS/scripts/keyboard/keyboard.js"></script>
-		<script src="runnables/2048-in-AngularJS/scripts/game/game.js"></script>
-
-	</body>
+  <!-- Local development -->
+  <script src="/scripts/app.js"></script>
+  <script src="/scripts/controllers.js"></script>
+  <script src="/scripts/animations.js"></script>
+</body>
 </html>

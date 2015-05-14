@@ -1,38 +1,45 @@
 'use strict';
 
-/* Controllers */
+angular
+  .module('jonwho')
+  .controller('NavCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav) {
+    $scope.users = [
+      {
+        name: 'Jon Ho',
+        avatar: '../bower_components/ionicons/src/person.svg',
+        templateUrl: '../views/me.html'
+      },
+      {
+        name: 'Experience',
+        avatar: '../bower_components/ionicons/src/briefcase.svg',
+        templateUrl: '../views/experience.html'
+      },
+      // remove skills page for now
+      // {
+      //   name: 'Skills',
+      //   avatar: '../bower_components/ionicons/src/settings.svg',
+      //   templateUrl: '../views/skills.html'
+      // },
+      {
+        name: 'Projects',
+        avatar: '../bower_components/ionicons/src/code.svg',
+        templateUrl: '../views/projects.html'
+      },
+      {
+        name: 'Contact',
+        avatar: '../bower_components/ionicons/src/person-add.svg',
+        templateUrl: '../views/contact.html'
+      }
+    ];
 
-angular.module('jonwho.controllers', [])
-  .controller('HomeCtrl', ['$scope', function($scope) {
-  	$scope.msg = 'home';
-  }])
-  .controller('CarouselCtrl', ['$scope', '$animate', '$timeout', function($scope, $animate, $timeout) {
-  	$scope.interval = 5000;
-  	var slides = $scope.slides = [];
+    $scope.selected = $scope.users[0];
 
-  	// add intern game
-  	slides.push({
-  		image: '../res/projects/scotttheintern/banner.png',
-  		text: 'A little video game written in C#'
-  	});
+    $scope.selectUser = function(user) {
+      $scope.selected = angular.isNumber(user) ? $scope.users[user] : user;
+      $scope.toggleList();
+    };
 
-  	// add ubi comp project
-  	slides.push({
-  		image: '../res/projects/speedydragons/speedy.jpg',
-  		text: 'Ubiquitous Computing project'
-  	});
-
-  	// add augmonted
-  	slides.push({
-  		image: '../res/projects/augmonted/augmonted.jpg',
-  		text: 'Augmented Reality video game for Android'
-  	});
-
-  	// need this to fix conflict issue on ui.bootstrap vs ngAnimate
-  	$timeout(function() {
-  		$animate.enabled(false, angular.element('.carousel'));
-  	});
-  }])
-  .controller('MyCtrl2', ['$scope', function($scope) {
-  	$scope.msg = 'nother ctrl';
+    $scope.toggleList = function() {
+      $mdSidenav('left').toggle();
+    };
   }]);

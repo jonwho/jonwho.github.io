@@ -26,7 +26,7 @@ gulp.task('uncss', function() {
  */
 gulp.task('minify', ['uncss'], function() {
   return gulp.src('dist/css/cssfile')
-    .pipe(minify(compatibility: 'ie8'))
+    .pipe(minify({compatibility: 'ie8'}))
     .pipe(gulp.dest('dist/css/cssfile')); // should just rename it the same name
                                           // so won't need to update references
 });
@@ -97,7 +97,7 @@ gulp.task('build-index', ['clean-dist'], function() {
  * Calls the other build tasks to run concurrently (only waiting on one task)
  * and builds views to dist.
  */
-gulp.taskh('build', ['build-index'], function() {
+gulp.task('build', ['build-index'], function() {
   var assets = useref.assets();
 
   return gulp.src(['views/**/*.html'])

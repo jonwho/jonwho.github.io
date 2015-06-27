@@ -114,3 +114,8 @@ md-sidenav md-list {
 .slide-animate.ng-leave.ng-leave-active {
   top:50px;
 }
+
+/* Prevent Angular template from showing */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

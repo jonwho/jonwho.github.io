@@ -81,15 +81,41 @@ gulp.task('clean-dist', function(cb) {
 /*
  * Builds the assets for index.html and had to do this
  * separate because of file structure.
+ * Don't need build-views because in this build they are only partials.
  */
 gulp.task('build-index', ['clean-dist'], function() {
   var assets = useref.assets();
 
   return gulp.src(['index.html'])
     .pipe(assets)
-    .pipe(gulpif('cssfiles', minify()))
+    .pipe(gulpif('scripts/**/*.js', uglify()))
+    .pipe(gulpif('styles/**/*.js', minify()))
     .pipe(assets.restore())
     .pipe(useref())
+    .pipe(gulp.dest('dist'));
+});
+
+/*
+ * Build res to dist
+ */
+gulp.task('build-res', ['clean-dist'], function() {
+  return gulp.src('res/**/*')
+    .pipe(gulp.dest('dist/res'));
+});
+
+/*
+ * Build ionicons to dist
+ */
+gulp.task('build-ionic', ['clean-dist'], function() {
+  return gulp.src('bower_components/ionicons/**/*')
+    .pipe(gulp.dest('dist/bower_components/ionicons'));
+});
+
+/*
+ * Build favicon to dist
+ */
+gulp.task('build-favicon', ['clean-dist'], function() {
+  return gulp.src('favicon.ico')
     .pipe(gulp.dest('dist'));
 });
 
@@ -97,13 +123,8 @@ gulp.task('build-index', ['clean-dist'], function() {
  * Calls the other build tasks to run concurrently (only waiting on one task)
  * and builds views to dist.
  */
-gulp.task('build', ['build-index'], function() {
-  var assets = useref.assets();
-
+gulp.task('build', ['build-index', 'build-res', 'build-ionic'], function() {
   return gulp.src(['views/**/*.html'])
-    .pipe(assets)
-    .pipe(gulpif('cssfiles', minify()))
-    .pipe(useref())
     .pipe(gulp.dest('dist/views'));
 });
 

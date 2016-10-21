@@ -6,3 +6,6 @@ Personal website hosted through Github. Site is built with Jekyll and themed by 
 Here you'll find my resume, some web apps I made, and some weird bloggy stuff.
 
 Visit site at [jonwho.github.io](http://jonwho.github.io)
+
+# Development
+Run `rake` to serve site and autowatch files for reloading as well as recompiling scss to css.

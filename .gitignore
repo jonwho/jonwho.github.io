@@ -1,4 +1,7 @@
 .c9
 *.swp
-node_modules
+*.swo
 *.DS_STORE
+_site
+.sass-cache
+.jekyll-metadata

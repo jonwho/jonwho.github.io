@@ -22,6 +22,7 @@ links:
 highlighter:      rouge
 permalink:        pretty
 markdown:         kramdown
-redcarpet:
-  extensions:
-    - smart
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'

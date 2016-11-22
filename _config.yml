@@ -13,6 +13,9 @@ links:
     url:          /about
   - name:         Projects
     url:          /projects
+  - name:         Resume
+    url:          http://jonwho.github.io/resume
+    external:     true
   - name:         GitHub
     url:          http://github.com/jonwho
     external:     true

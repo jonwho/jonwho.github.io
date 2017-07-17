@@ -4,8 +4,10 @@ title: Projects
 ---
 Some links to keep you busy.
 
-[Augmonted](http://augmonted.github.io) - only the coolest game ever
+[Augmonted](http://augmonted.github.io) - Only the coolest game ever
 
-[Lolxin](https://github.com/jonwho/lolxin) - my first gem
+[Lolxin](https://github.com/jonwho/lolxin) - League of Legends API wrapper
 
-[SimpleChat](http://playwithfire.firebaseapp.com) - cuz the world needs anutha one
+[SimpleChat](http://playwithfire.firebaseapp.com) - Cuz the world needs anutha one
+
+[Streamup](https://jonwho-streamup.herokuapp.com/) - Watch live video with live chat

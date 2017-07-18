@@ -11,3 +11,5 @@ Some links to keep you busy.
 [SimpleChat](http://playwithfire.firebaseapp.com) - Cuz the world needs anutha one
 
 [Streamup](https://jonwho-streamup.herokuapp.com/) - Watch live video with live chat
+
+[Dududu](https://jonwho-todo.herokuapp.com/) - Todo list focusing on Rails SJR

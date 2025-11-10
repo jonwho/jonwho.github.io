@@ -1,11 +1,17 @@
-[jonwho.github.io](http://jonwho.github.io)
-================
+# jonwho.github.io
 
-Personal website hosted through Github. Site is built with Jekyll and themed by [Scribble](https://github.com/muan/scribble).
+Personal landing page hosted on GitHub Pages.
 
-Here you'll find my resume, some web apps I made, and some weird bloggy stuff.
+Simple, static HTML site linking to my professional profiles.
 
-Visit site at [jonwho.github.io](http://jonwho.github.io)
+Visit at [jonwho.github.io](http://jonwho.github.io)
 
-# Development
-Run `rake` to serve site and autowatch files for reloading as well as recompiling scss to css.
+## Local Development
+
+Run a local server to preview:
+
+```bash
+python3 -m http.server 4000
+```
+
+Then visit http://localhost:4000
